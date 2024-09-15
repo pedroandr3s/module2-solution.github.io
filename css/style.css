@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 20px; /* Espacio alrededor del contenedor principal */
+    overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
+
+header {
+    text-align: center;
+    margin: 20px 0; /* Margen superior e inferior del encabezado */
+}
+
+h1 {
+    font-size: 1.75em; /* Tamaño del texto del encabezado */
+    margin: 0; /* Elimina el margen del encabezado */
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los cuadros */
+    margin: 0; /* Elimina el margen alrededor del contenedor */
+    padding: 0; /* Elimina el padding alrededor del contenedor */
+}
+
+.section {
+    position: relative;
+    background-color: #d3d3d3;
+    border: 1px solid #000;
+    padding: 10px; /* Padding dentro de los cuadros */
+    box-sizing: border-box;
+    flex: 1 1 calc(20% - 20px); /* Ancho ajustado para hacer los cuadros más pequeños y dejar espacio para el gap */
+    min-width: 0; /* Permite que los elementos se reduzcan en tamaño */
+}
+
+/* Sección del título */
+.title {
+    position: absolute;
+    top: 0; /* Ajusta la posición superior del título al borde del cuadro */
+    right: 0; /* Ajusta la posición derecha del título al borde del cuadro */
+    background-color: transparent;
+    color: #000;
+    padding: 5px 10px; /* Espacio interno del título */
+    border: 1px solid #000;
+    font-weight: bold;
+}
+
+/* Colores específicos para cada sección */
+.chicken .title {
+    background-color: pink;
+}
+
+.beef .title {
+    background-color: red;
+    color: #fff;
+}
+
+.sushi .title {
+    background-color: yellow;
+    color: #000;
+}
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 992px) {
+    .section {
+        flex: 1 1 calc(20% - 20px); /* Ancho ajustado para hacer los cuadros más pequeños */
+    }
+}
+
+/* Estilos para dispositivos de tableta */
+@media (min-width: 768px) and (max-width: 991px) {
+    .section {
+        flex: 1 1 calc(45% - 20px); /* Ancho ajustado para tabletas */
+    }
+    .section:nth-child(3) {
+        flex: 1 1 100%;
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    .section {
+        flex: 1 1 100%;
+    }
+}
+
+p {
+    margin: 0;
+}
